@@ -75,11 +75,20 @@ def remove_filler_words(frequency_table):
     Ofte inneholder tekst koblingsord som "og", "eller", "jeg", "da". Disse er ikke så spennende når man vil
     analysere innholdet til en tekst. Derfor vil vi gjerne fjerne dem fra vår frekvenstabell.
     Vi har gitt deg en liste med slike koblingsord i variablen FILL_WORDS ovenfor.
-    Målet med denne funksjonen er at den skal få en frekvenstabll som input og så fjerne alle fyll-ord
+    Målet med denne funksjonen er at den skal få en frekvenstabell som input og så fjerne alle fyll-ord
     som finnes i FILL_WORDS.
     """
-    return NotImplemented  # TODO: Du må erstatte denne linjen
+    for word in FILL_WORDS:  # Itererer over listen med fyll-ord
+        if word in frequency_table:
+            frequency_table.pop(word)  # Fjerner ordet fra frekvenstabellen hvis det er et fyll-ord
 
+    return frequency_table  # Return the modified frequency table
+
+    # Alternativ måte å løse det på
+
+    # for word in list(frequency_table.keys()):
+    #    if word in FILL_WORDS:
+    #        frequency_table.pop(word)
 
 def largest_pair(par_1, par_2):
     """
@@ -90,6 +99,9 @@ def largest_pair(par_1, par_2):
     """
     # OBS: Tenk også på situasjonen når to tall er lik! Vurder hvordan du vil handtere denne situasjonen
     # kanskje du vil skrive noen flere test metoder ?!
+
+
+
     return NotImplemented  # TODO: Du må erstatte denne linjen
 
 
