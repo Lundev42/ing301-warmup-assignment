@@ -90,6 +90,9 @@ def remove_filler_words(frequency_table):
     #    if word in FILL_WORDS:
     #        frequency_table.pop(word)
 
+
+
+
 def largest_pair(par_1, par_2):
     """
     Denne funksjonen får som input to tupler/par (https://docs.python.org/3/library/stdtypes.html#tuple) der den
@@ -100,9 +103,10 @@ def largest_pair(par_1, par_2):
     # OBS: Tenk også på situasjonen når to tall er lik! Vurder hvordan du vil handtere denne situasjonen
     # kanskje du vil skrive noen flere test metoder ?!
 
-
-
-    return NotImplemented  # TODO: Du må erstatte denne linjen
+    if par_1[1] >= par_2[1]:    # Sammenligner heltalls-komponenten i begge par
+        return par_1            # Returnerer det første paret hvis det har større eller lik frekvens
+    else:
+        return par_2            # Returnerer det andre paret hvis det har større frekvens
 
 
 def find_most_frequent(frequency_table):
@@ -112,7 +116,17 @@ def find_most_frequent(frequency_table):
     """
     # Tips: se på "dict.items()" funksjonen (https://docs.python.org/3/library/stdtypes.html#dict.items)
     # og kanskje du kan gjenbruke den "largest_pair" metoden som du nettopp har laget
-    return NotImplemented  # TODO: Du må erstatte denne linjen
+    
+    max_count = 0
+    max_word = None
+
+    for word, count in frequency_table.items():
+        if count > max_count:
+            max_count = count
+            max_word = word
+
+    return max_word  # Returnerer det mest hyppige ordet
+
 
 
 ############################################################
