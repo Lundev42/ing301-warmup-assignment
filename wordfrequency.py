@@ -38,7 +38,15 @@ def lines_to_words(lines):
     # Tips: se på "split()"-funksjonen https://docs.python.org/3/library/stdtypes.html#str.split
     # i tillegg kan "strip()": https://docs.python.org/3/library/stdtypes.html#str.strip
     # og "lower()": https://docs.python.org/3/library/stdtypes.html#str.lower være nyttig
-    return NotImplemented  # TODO: Du må erstatte denne linjen
+    words = []
+    for line in lines:
+        line_words = line.split()   # splitter hver setning til ord
+        for word in line_words:     # itererer over nye liste med ord
+            correct_word = word.strip('.,:;!?').lower() # fjerner ekstrategn og gjør alle bokstaver små
+            if correct_word:
+                words.append(correct_word)                  # legger til det korrigerte ordet i den nye listen med ord
+
+    return words  # Return the list of words
 
 
 def compute_frequency(words):
@@ -49,6 +57,9 @@ def compute_frequency(words):
 
     F. eks. Inn ["hun", "hen", "han", "hen"], Ut: {"hen": 2, "hun": 1, "han": 1}
     """
+    
+
+
     return NotImplemented  # TODO: Du må erstatte denne linjen
 
 
