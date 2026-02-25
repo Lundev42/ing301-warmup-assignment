@@ -57,10 +57,14 @@ def compute_frequency(words):
 
     F. eks. Inn ["hun", "hen", "han", "hen"], Ut: {"hen": 2, "hun": 1, "han": 1}
     """
-    
+    frequency_table = {}
+    for word in words:
+        if word in frequency_table:
+            frequency_table[word] += 1  # Øker frekvensen for ordet hvis det allerede finnes i tabellen
+        else:
+            frequency_table[word] = 1   # Legger til ordet i tabellen med frekvens 1 hvis det ikke finnes
 
-
-    return NotImplemented  # TODO: Du må erstatte denne linjen
+    return frequency_table  # Return the frequency table
 
 
 FILL_WORDS = ['og', 'dei', 'i', 'eg', 'som', 'det', 'han', 'til', 'skal', 'på', 'for', 'då', 'ikkje', 'var', 'vera']
